@@ -1,26 +1,28 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {PreloadAllModules} from '@angular/router';
-
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { PreloadAllModules } from '@angular/router'
 
 const routes: Routes = [
   {
     path: 'aventador',
-    loadChildren: () => import('./aventador/aventador.module').then(m => m.AventadorModule)
-  }, {
+    loadChildren: () => import('./aventador/aventador.module').then((m) => m.AventadorModule)
+  },
+  {
     path: 'huracan',
-    loadChildren: () => import('./huracan/huracan.module').then(m => m.HuracanModule)
-  }, {
+    loadChildren: () => import('./huracan/huracan.module').then((m) => m.HuracanModule)
+  },
+  {
     path: 'urus',
-    loadChildren: () => import('./urus/urus.module').then(m => m.UrusModule)
+    loadChildren: () => import('./urus/urus.module').then((m) => m.UrusModule)
   }
-];
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
