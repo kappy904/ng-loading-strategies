@@ -1,27 +1,20 @@
-# NgLoadingStrategies
+# Angular Loading Strategies
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+Hey friend! Thanks for stopping by! This is basically a 101 on lazy vs pre-loading! Make sure you're familiar with the network tab :) 
 
-## Development server
+#### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Branches
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+There are 2 ->
+`lazy-loading` & `pre-loading`
+You can start with lazy and analyse the app.module.ts file
 
-## Build
+#### -> Lazy loading
+The default angular loading strategy is eager-loading - which means load everything you tell it to in the app.module. But thanks to the beauty of the browsers dynamic importing we can lazy load these modules on demand now! This saves loads of initial load time.   
+Combined with intersection observe you can double if not triple your app loading time! (More on this if you have a look at my portfolio site [kapeesh.dev](https://github.com/kappy904/kapeesh.dev))
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### -> Pre-loading
+Well let's pre-load EVERYTHING? No no, don't get this confused. This will only load the initial(first) routes to get the page up as soon as possible. It loads the other modules in the background while you're not looking ;) In this little app it's just the modules, but you can load component data too - have a look at [Angulars documentation](https://angular.io/guide/lazy-loading-ngmodules) for this.
