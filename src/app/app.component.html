@@ -2,8 +2,13 @@
   {{title}}
 </h1>
 
-<button routerLink="/aventador">Aventador</button>
-<button routerLink="/huracan">Huracan</button>
-<button routerLink="/urus">Urus</button>
 
+<div class="content-wrapper">
+  <div class="flex">
+    <div routerLink="/aventador" class="card bg-color-1">
+      Aventador</div>
+    <div class="card bg-color-2" routerLink="/huracan">Huracan</div>
+    <div class="card bg-color-3" routerLink="/urus">Urus</div>
+  </div>
+</div>
 <router-outlet></router-outlet>
